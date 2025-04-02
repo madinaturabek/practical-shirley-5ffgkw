@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Медициналық Тексерулер мен Қабылдаулар</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f7fc;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      header {
+        background-color: #005b64;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin: 0 20px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      section {
+        padding: 40px;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .account-info {
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 50px auto;
+        text-align: left;
+      }
+
+      .service-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .service-item {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .service-item button {
+        padding: 10px 15px;
+        background-color: #4caf50;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .service-item button:hover {
+        background-color: #45a049;
+      }
+
+      footer {
+        background-color: #005b64;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Медициналық Тексерулер мен Қабылдаулар</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Басты бет</a></li>
+          <li><a href="#account">Менің аккаунтым</a></li>
+          <li><a href="#services">Қызметтер</a></li>
+          <li><a href="#logout" onclick="logout()">Шығу</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="account">
+      <h2>Менің аккаунтым</h2>
+      <div class="account-info">
+        <h3>Қош келдіңіз, <span id="user-name">Пайдаланушы</span></h3>
+        <p>
+          Мұнда сіз өзіңіздің медициналық тексерулеріңіз бен қабылдауларыңызды
+          көре аласыз.
+        </p>
+        <p>
+          Егер сізге басқа қызметтер керек болса, төменде көрсетілген бөлімді
+          қараңыз.
+        </p>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Медициналық Қызметтер</h2>
+      <div class="service-list">
+        <div class="service-item">
+          <h3>Жалпы тексеру</h3>
+          <button onclick="bookService('Жалпы тексеру')">Жазылу</button>
+        </div>
+        <div class="service-item">
+          <h3>Кардиолог қабылдауы</h3>
+          <button onclick="bookService('Кардиолог қабылдауы')">Жазылу</button>
+        </div>
+        <div class="service-item">
+          <h3>Тіс дәрігері қабылдауы</h3>
+          <button onclick="bookService('Тіс дәрігері қабылдауы')">
+            Жазылу
+          </button>
+        </div>
+        <div class="service-item">
+          <h3>Қан анализі</h3>
+          <button onclick="bookService('Қан анализі')">Жазылу</button>
+        </div>
+        <div class="service-item">
+          <h3>Рентген түсіру</h3>
+          <button onclick="bookService('Рентген түсіру')">Жазылу</button>
+        </div>
+        <div class="service-item">
+          <h3>Массаж терапиясы</h3>
+          <button onclick="bookService('Массаж терапиясы')">Жазылу</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Медициналық Тексерулер</p>
+    </footer>
+
+    <script>
+      function bookService(serviceName) {
+        alert(serviceName + " үшін жазылу сәтті аяқталды!");
+      }
+
+      function logout() {
+        alert("Сіз жүйеден шықтыңыз!");
+        location.href = "#home";
+      }
+
+      // Егер пайдаланушы кіргенде аты көрсетілсін
+      window.onload = function () {
+        // Бұл жерде пайдаланушының аты сақталатын жерге мәліметтерді қоя аласыз.
+        document.getElementById("user-name").innerText = "Айжан"; // Бұл жерде пайдаланушының атын динамикалық түрде көрсету
+      };
+    </script>
+  </body>
+</html>
